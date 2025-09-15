@@ -1,0 +1,12 @@
+serviceAccount:
+  create: true
+  name: fluentbit
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::<your-account-id>:role/<your-fluentbit-irsa-role>
+
+cloudWatch:
+  enabled: true
+  region: <aws-region>     
+  logGroupName: /aws/containerinsights/django-app
+  logStreamPrefix: kube
+  autoCreateGroup: true
